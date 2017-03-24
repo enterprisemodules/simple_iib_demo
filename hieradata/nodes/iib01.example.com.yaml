@@ -1,0 +1,5 @@
+deployment_zone: vagrant
+
+role: role::iib
+
+iib_install::software::source_location:  /vagrant/modules/software/files
