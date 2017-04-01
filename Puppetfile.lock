@@ -14,7 +14,7 @@ FORGE
 GIT
   remote: git@github.com:enterprisemodules/iib_config.git
   ref: master
-  sha: c2afbdbe48347a6fcfba469195b537497bf997c9
+  sha: 3c94eac6a79dc7d518cd7b16a63034f1d6538a56
   specs:
     enterprisemodules-iib_config (0.0.1)
       enterprisemodules-easy_type (< 2.3.0, >= 2.2.3)

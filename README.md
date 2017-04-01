@@ -11,7 +11,7 @@ Because this vagrant box uses private repo's inside of the box, you will have to
 All nodes are available to test with Puppet masterless. To do so, add `ml-` for the name when using vagrant:
 
 ```
-$ vagrant up ml-mq01
+$ vagrant up ml-iib01
 ```
 
 ## Staring the nodes with PE

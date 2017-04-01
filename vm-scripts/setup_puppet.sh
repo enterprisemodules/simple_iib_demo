@@ -5,6 +5,14 @@ echo 'Installing required gems'
 /opt/puppetlabs/puppet/bin/gem install activesupport:4.2.7.1 librarian-puppet awesome_print --no-rdoc --no-ri
 yum install git -y
 
+#
+# Setting up ssh access
+#
+echo 'Setting up ssh access'
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+
 echo 'Installing required puppet modules'
 cd /vagrant
 /opt/puppetlabs/puppet/bin/librarian-puppet install
