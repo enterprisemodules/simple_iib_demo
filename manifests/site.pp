@@ -1,4 +1,4 @@
-include stdlib                       # Make sure the standard functions are available
+include stdlib                        # Make sure the standard functions are available
 include easy_type::license::activate  # Always include the license class. This makes sure all the license files are copied
 
 $deployment_zone = hiera('deployment_zone')

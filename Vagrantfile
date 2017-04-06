@@ -34,6 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       srv.vm.provision :shell, inline: <<-EOD
 cat > /etc/hosts<< "EOF"
 127.0.0.1 localhost.localdomain localhost4 localhost4.localdomain4
+127.0.0.1 localhost.localdomain localhost localhost.localdomain
 192.168.253.10 master.example.com puppet master
 #{server['public_ip']} #{hostname}.example.com #{hostname}
 EOF
