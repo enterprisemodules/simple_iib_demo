@@ -1,6 +1,6 @@
 class profile::iib::example::deployments()
 {
-  $brokers   = lookup('profile::iib::example::brokers::list')
+  $brokers = lookup('profile::iib::example::brokers::list')
   $servers = lookup('profile::iib::example::servers::list')
 
   #
