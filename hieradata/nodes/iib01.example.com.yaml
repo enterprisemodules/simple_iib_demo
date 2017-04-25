@@ -2,16 +2,5 @@ deployment_zone: vagrant
 
 role: role::iib
 
-iib_install::software::version: '10.0.0.7'
-iib_install::software::source_location:  /vagrant/modules/software/files
-profile::iib::example::brokers::list:
-  - "IIB107/IB10NODE1"
-  - "IIB107/IB10NODE2"
-  - "IIB107/IB10NODE3"
-  - "IIB107/IB10NODE4"
-
-profile::iib::example::servers::list:
-  - server_1
-  - server_2
-  - server_3
-  - server_4
+profile::installiib::source_location:   /vagrant/modules/software/files/
+profile::installiib::version:           10.0.0.8
