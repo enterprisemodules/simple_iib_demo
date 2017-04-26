@@ -1,8 +1,5 @@
 class profile::iib::example::deployments()
 {
-  $brokers = lookup('profile::iib::example::brokers::list')
-  $servers = lookup('profile::iib::example::servers::list')
-
   #
   # First copy the bar file to a location we can read
   #
@@ -10,15 +7,14 @@ class profile::iib::example::deployments()
     ensure =>'present',
     source => '/vagrant/bar_files/Helloproject.TestMode.bar',
   }
-  #
-  # Now deploy it on every server on all brokers
-  #
-  $brokers.each |$broker| {
-    $servers.each |$server| {
-      iib_deployment {"${broker}/${server}/Hello":
-        ensure => 'present',
-        source => '/tmp/Helloproject.TestMode.bar',
-      }
-    }
+
+  -> iib_deployment {'iib8/NODE1/server_1/Hello':
+    ensure => 'present',
+    source => '/tmp/Helloproject.TestMode.bar',
+  }
+
+  -> iib_deployment {'iib8/NODE1/server_2/Hello':
+    ensure => 'present',
+    source => '/tmp/Helloproject.TestMode.bar',
   }
 }
