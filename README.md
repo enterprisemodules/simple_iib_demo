@@ -37,9 +37,12 @@ The software must be placed in in the `software` directory. It must contain the 
 ### Puppet Enterprise
 - puppet-enterprise-2016.5.1-el-7-x86_64.tar.gz (Extracted tar)
 
+### IBM IIB Fixpack (Supported versions)
 
-### IBM MQ
-- 10.0.0-IIB-LINUXX64-FP0006.tar.gz
+- 10.0.0-IIB-LINUXX64-FP0007.tar.gz
+- 10.0.0-IIB-LINUXX64-FP0008.tar.gz
+
+
 # Example run
 
 Check here the example run:
