@@ -28,17 +28,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       srv.vm.network 'private_network', ip: server['public_ip']
       srv.vm.network 'private_network', ip: server['private_ip'], virtualbox__intnet: true
       srv.vm.synced_folder '.', '/vagrant', type: :virtualbox
-      #
+
       # Fix hostnames because Vagrant mixes it up.
-      #
-      srv.vm.provision :shell, inline: <<-EOD
-cat > /etc/hosts<< "EOF"
-127.0.0.1 localhost.localdomain localhost4 localhost4.localdomain4
-127.0.0.1 localhost.localdomain localhost localhost.localdomain
-192.168.253.10 master.example.com puppet master
-#{server['public_ip']} #{hostname}.example.com #{hostname}
-EOF
-EOD
+      srv.vm.provision :shell, inline: <<-EOD.gsub(/^\s*/, '')
+        cat > /etc/hosts<< "EOF"
+        127.0.0.1 localhost.localdomain localhost4 localhost4.localdomain4
+        127.0.0.1 localhost.localdomain localhost localhost.localdomain
+        192.168.253.10 master.example.com puppet master
+        #{server['public_ip']} #{hostname}.example.com #{hostname}
+        EOF
+      EOD
+
       case server['type']
       when 'masterless'
         srv.vm.box = 'enterprisemodules/centos-7.2-x86_64-puppet' unless server['box']
@@ -50,7 +50,7 @@ EOD
         srv.vm.provision :shell, inline: "/vagrant/modules/software/files/#{puppet_installer} -c /vagrant/pe.conf -y"
         #
         # For this vagrant setup, we make sure all nodes in the domain examples.com are autosigned. In production
-        # you'dd want to explicitly confirm every node.
+        # you would want to explicitly confirm every node.
         #
         srv.vm.provision :shell, inline: "echo '*.example.com' > /etc/puppetlabs/puppet/autosign.conf"
         #
@@ -60,7 +60,7 @@ EOD
         srv.vm.provision :shell, inline: 'systemctl stop firewalld.service'
         srv.vm.provision :shell, inline: 'systemctl disable firewalld.service'
         #
-        # This script make's sure the vagrant paths's are symlinked to the places Puppet Enterprise looks for specific
+        # This script makes sure the vagrant paths are symlinked to the places Puppet Enterprise looks for specific
         # modules, manifests and hiera data. This makes it easy to change these files on your host operating system.
         #
         srv.vm.provision :shell, path: 'vm-scripts/setup_puppet.sh'
@@ -73,11 +73,11 @@ EOD
       when 'pe-agent'
         srv.vm.box = 'enterprisemodules/centos-7.2-x86_64-nocm' unless server['box']
         #
-        # First we need to instal the agent.
+        # First we need to install the agent.
         #
         srv.vm.provision :shell, inline: 'curl -k https://master.example.com:8140/packages/current/install.bash | sudo bash'
         #
-        # The agent installation also automatically start's it. In production, this is what you want. For now we
+        # The agent installation also automatically starts it. In production, this is what you want. For now we
         # want the first run to be interactive, so we see the output. Therefore, we stop the agent and wait
         # for it to be stopped before we start the interactive run
         #
