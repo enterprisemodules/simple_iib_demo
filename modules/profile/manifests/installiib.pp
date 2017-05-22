@@ -10,10 +10,10 @@ class profile::installiib(
   #
   # For now lock on fixpack 8 and use the name as such
   #
-  -> iib_instance { iib8:
+  -> iib_instance { 'iib8':
     ensure         => 'present',
     os_user        => 'iibadmin',
-    home_directory => "/opt/ibm/mqsi/iib-${version}",
+    home_directory => "/opt/IBM/iib-${version}",
   }
 
 }

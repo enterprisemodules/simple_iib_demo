@@ -1,0 +1,11 @@
+deployment_zone: vagrant
+
+role: role::mqiib
+
+software_location: &software_location   /software
+
+mq_install::software::version:           9.0.0.0
+mq_install::software::source_location:   *software_location
+
+profile::installiib::source_location:   *software_location
+profile::installiib::version:           10.0.0.8
