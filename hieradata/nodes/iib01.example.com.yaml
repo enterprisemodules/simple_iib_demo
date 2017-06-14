@@ -3,4 +3,4 @@ deployment_zone: vagrant
 role: role::iib
 
 profile::installiib::source_location:   /vagrant/software/
-profile::installiib::version:           10.0.0.8
+profile::installiib::version:           10.0.0.9
