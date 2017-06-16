@@ -6,7 +6,6 @@ class profile::iib::example::setup()
   iib_broker { "${version}/IIB10NODE":
     ensure                       => 'present',
     status                       => 'running',
-    queue_manager                => 'IIB10QM',
     function_level               => 'all',
     http_listener_start_listener => false,
   }
