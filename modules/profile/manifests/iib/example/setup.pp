@@ -30,7 +30,7 @@ class profile::iib::example::setup()
   #
   file {'/tmp/Helloproject.TestMode.bar':
     ensure =>'present',
-    source => '/etc/puppetlabs/code/environments/production/bar_files/Helloproject.TestMode.bar',
+    source => 'puppet:///modules/deployments/Helloproject.TestMode.bar',
   }
 
   # mqsideploy IIB10NODE -e default -a /data/software/ns_mqiib_demo-master/software/puppet_setup/bar_files/Helloproject.TestMode.bar
