@@ -1,3 +1,3 @@
 ---
 
-empty: 'The file needs some data'
+profile::installiib::source_location:   puppet:///modules/software

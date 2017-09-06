@@ -15,4 +15,7 @@
 /modules/iib_install
 /modules/iib_iconfig
 /modules/iib_config
+/modules/debconf
 /modules/software/files
+/modules/sysctl
+/modules/limits
