@@ -1,10 +1,6 @@
 # Demo Puppet implementation
 
-This repo contains a demonstration of a simple IBM Integration Bus (IIB) installation installation. At this point in time our IIB modules are not released yet. To check how this repo works, please contact [Enterprise Modules](email:info@enterprisemodules.com) to get access to the private repositories containing our IIB modules.
-
-## Requirements
-
-Because this vagrant box uses private repo's inside of the box, you will have to have an ssh agent running on your host. See the Internet on how to do this for your specific host OS.
+This repo contains a demonstration of a simple IBM Integration Bus (IIB) installation installation.
 
 ## Starting the nodes masterless
 
@@ -35,12 +31,12 @@ You must always use the specified order:
 The software must be placed in in the `software` directory. It must contain the next files:
 
 ### Puppet Enterprise
-- puppet-enterprise-2016.5.1-el-7-x86_64.tar.gz (Extracted tar)
+- puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz (Extracted tar)
 
 ### IBM IIB Fixpack (Supported versions)
+The software directory must contain
 
-- 10.0.0-IIB-LINUXX64-FP0007.tar.gz
-- 10.0.0-IIB-LINUXX64-FP0008.tar.gz
+- 10.0.0-IIB-LINUXX64-FP0009.tar.gz
 
 
 # Example run
