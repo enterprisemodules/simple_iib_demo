@@ -12,7 +12,8 @@ $ vagrant up ml-iib01
 
 ## Staring the nodes with PE
 
-You can also test with a Puppet Enterprise server. To do so, add `pe-` for the name when using vagrant:
+You can also test with a Puppet Enterprise server. To do so, add `pe-` for the
+name when using vagrant:
 
 ```
 $ vagrant up pe-master
@@ -28,15 +29,14 @@ You must always use the specified order:
 
 ## Required software
 
-The software must be placed in in the `software` directory. It must contain the next files:
+The software must be placed in in the `modules/software/files` directory.
+It must contain the following files:
 
 ### Puppet Enterprise
-- puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz (Extracted tar)
+- `puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz` (Extracted tar)
 
 ### IBM IIB Fixpack (Supported versions)
-The software directory must contain
-
-- 10.0.0-IIB-LINUXX64-FP0009.tar.gz
+- `10.0.0-IIB-LINUXX64-FP0010.tar.gz`
 
 
 # Example run
