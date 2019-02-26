@@ -1,4 +1,5 @@
 role: role::iib
 
 profile::installiib::source_location:   /vagrant/modules/software/files/
-profile::installiib::version:           10.0.0.10
+profile::installiib::version:           11.0.0.2
+profile::installiib::file_name:         ACE_V11.0_LIN_X86-64_INC_TOOLKIT_

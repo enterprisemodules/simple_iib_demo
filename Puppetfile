@@ -14,9 +14,9 @@ mod 'saz-timezone',
 #
 # The Enterprise Modules Oracle specific Modules
 #
-mod 'enterprisemodules-iib_config',   '1.0.4'
-mod 'enterprisemodules-iib_install',  '1.0.7'
-mod 'enterprisemodules-easy_type',    '2.3.1'
+# mod 'enterprisemodules-iib_config',   '1.0.4'
+# mod 'enterprisemodules-iib_install',  '1.0.7'
+mod 'enterprisemodules-easy_type',    '2.5.0'
 #
 # Modules that are part of the control repo. R10K doesn't need to toch these
 #
@@ -25,3 +25,5 @@ mod 'profile',     :local => true
 mod 'em_license',  :local => true
 mod 'software',    :local => true
 mod 'deployments',  :local => true
+mod 'iib_config',   :local => true
+mod 'iib_install',  :local => true

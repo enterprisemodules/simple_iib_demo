@@ -26,18 +26,18 @@ def link_software
 end
 
 def link_sync(dir, target)
-  Dir.glob("#{dir}/*").each do |file|
-    file_name = File.basename(file)
-    if File.directory?(file)
-      FileUtils.mkdir("#{target}/#{file_name}") unless File.exist?("#{target}/#{file_name}")
-      link_sync(file, "#{target}/#{file_name}")
-      next
-    end
-    full_target = "#{target}/#{file_name}"
-    next if File.exist?(full_target)
-    puts "Linking file #{file} to #{full_target}..."
-    FileUtils.ln(file, full_target)
-  end
+  # Dir.glob("#{dir}/*").each do |file|
+  #   file_name = File.basename(file)
+  #   if File.directory?(file)
+  #     FileUtils.mkdir("#{target}/#{file_name}") unless File.exist?("#{target}/#{file_name}")
+  #     link_sync(file, "#{target}/#{file_name}")
+  #     next
+  #   end
+  #   full_target = "#{target}/#{file_name}"
+  #   next if File.exist?(full_target)
+  #   puts "Linking file #{file} to #{full_target}..."
+  #   FileUtils.ln(file, full_target)
+  # end
 end
 
 VAGRANTFILE_API_VERSION = '2'.freeze
