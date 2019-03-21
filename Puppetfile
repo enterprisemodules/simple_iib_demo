@@ -16,7 +16,7 @@ mod 'saz-timezone',
 #
 # mod 'enterprisemodules-iib_config',   '1.0.4'
 # mod 'enterprisemodules-iib_install',  '1.0.7'
-mod 'enterprisemodules-easy_type',    '2.5.0'
+mod 'enterprisemodules-easy_type'
 #
 # Modules that are part of the control repo. R10K doesn't need to toch these
 #
