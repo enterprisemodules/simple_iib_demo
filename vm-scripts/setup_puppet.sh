@@ -14,6 +14,8 @@ then
   cp /vagrant/.netrc ~
 fi
 /opt/puppetlabs/puppet/bin/r10k puppetfile install > /dev/null # 2>&1
+# Add pry-byebug
+/opt/puppetlabs/puppet/bin/gem install pry-byebug
 
 #
 # Setup hiera search and backend. We need this to config our systems
