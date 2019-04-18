@@ -36,19 +36,19 @@ It must contain the next files:
 
 - puppet-enterprise-2017.2.3-el-7-x86_64.tar.gz (Extracted tar)
 
-### IBM IIB Fixpack (Supported versions)
-
-*If the setup targets IBM IIB version 10*
-The software directory must contain fixpack 9.
-
-- 10.0.0-IIB-LINUXX64-FP0009.tar.gz
-
 ### IBM ACE Fixpack (Supported versions)
 
 *If the setup targets IBM App Connect Enterprise Version 11.0*
 The software directory must contain fixpack 4
 
 - 11.0.0-ACE-LINUXX64-FP0004.tar.gz
+
+### IBM IIB Fixpack (switch git branch)
+
+*On `master`  branch the setup targets IBM IIB version 10*
+The software directory must contain fixpack 9.
+
+- 10.0.0-IIB-LINUXX64-FP0009.tar.gz
 
 ## Node Configuration
 
