@@ -22,3 +22,5 @@
 
 # Unignore
 !modules/software/.gitkeep
+/modules/augeasproviders_sysctl
+/modules/augeasproviders_core

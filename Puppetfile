@@ -1,27 +1,22 @@
-forge 'http://forge.enterprisemodules.com'
-
-mod 'puppetlabs-stdlib',              '4.18.0'
-mod 'petems-swap_file',               '1.0.1'
-mod 'puppet-archive',                 '2.0.0'
-mod 'AlexCline-dirtree'
-mod 'stm-debconf'
+mod 'puppetlabs-stdlib',                   '5.2.0'
+mod 'petems-swap_file',                    '4.0.2'
+mod 'saz-timezone',                        '5.1.1'
+mod 'saz-limits',                          '3.0.3'
+mod 'herculesteam-augeasproviders_sysctl', '2.3.1'
+mod 'herculesteam-augeasproviders_core',   '2.4.0'
+mod 'puppet-archive',                      '3.2.1'
+mod 'AlexCline-dirtree',                   '0.2.1'
 #
-# Here are some of the modules that are not yet released
+# Enterprise Modules 
 #
-mod 'saz-timezone',
-  :git => 'https://github.com/saz/puppet-timezone.git',
-  :ref => '62ba3ccadf13ee8dbd786b7ade29096fc3ab40b6'
+mod 'enterprisemodules-easy_type',          '2.10.3'
+mod 'enterprisemodules-iib_install',        '1.2.2'
+mod 'enterprisemodules-iib_config',         '1.2.0'
 #
-# The Enterprise Modules Oracle specific Modules
+# Modules that are part of the control repo. R10K doesn't need to touch these
 #
-mod 'enterprisemodules-iib_config',   '1.0.4'
-mod 'enterprisemodules-iib_install',  '1.0.7'
-mod 'enterprisemodules-easy_type',    '2.3.1'
-#
-# Modules that are part of the control repo. R10K doesn't need to toch these
-#
-mod 'role',        :local => true
-mod 'profile',     :local => true
-mod 'em_license',  :local => true
-mod 'software',    :local => true
-mod 'deployments',  :local => true
+mod 'role',        local: true
+mod 'profile',     local: true
+mod 'em_license',  local: true
+mod 'software',    local: true
+mod 'deployments', local: true

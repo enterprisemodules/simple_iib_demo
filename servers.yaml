@@ -1,38 +1,45 @@
 ---
-pe-master:
+#
+# The default settings for all nodes
+#
+defaults:
+  domain_name:     example.com
+  cpucount:         1
+  box:              enterprisemodules/centos-7.3-x86_64-nocm
+  virtualboxorafix: enable
+#
+# The default settings for all ML nodes
+#
+ml-defaults:
+  type:             masterless
+#
+# The default settings for all PE nodes
+#
+pe-defaults:
+  type:             pe-agent
+  puppet_master:    iibmaster
+
+#
+# The settings for the Puppet Enterprise Server
+#  
+pe-iibmaster:
   public_ip:       '192.168.253.10'
   cpucount:         2
   ram:              3072
   type:             pe-master
+  puppet_installer: puppet-enterprise-2019.1.0-el-7-x86_64/puppet-enterprise-installer
 
-ml-iib01:
-  public_ip: '192.168.253.31'
-  cpucount: 2
-  type:     masterless
-  box: enterprisemodules/centos-7.3-x86_64-nocm
-  # The installer needs to be unpacked in the ./modules/software/files/
-  # directory.
-  puppet_installer: puppet-enterprise-2017.2.3-el-7-x86_64/puppet-enterprise-installer
+#
+# All masterless nodes
+#
+ml-iib010:
+  public_ip: '192.168.254.10'
   software_files:
-    - 10.0.0-IIB-LINUXX64-FP0010.tar.gz
-  required_plugins:
-    # - vagrant-triggers
-    # - vagrant-vbguest
-  additional_hosts: |
-    192.168.1.1 example.com
-
-pe-iib01:
-  public_ip: '192.168.253.31'
-  cpucount: 2
-  type:     pe-agent
-  box: enterprisemodules/centos-7.3-x86_64-nocm
-  # The installer needs to be unpacked in the ./modules/software/files/
-  # directory.
-  puppet_installer: puppet-enterprise-2017.2.3-el-7-x86_64/puppet-enterprise-installer
+    - 10.0.0-IIB-LINUXX64-FP0011.tar.gz
+#
+# All Puppet Agent nodes
+#
+pe-iib010:
+  public_ip: '192.168.254.10'
   software_files:
-    - 10.0.0-IIB-LINUXX64-FP0010.tar.gz
-  required_plugins:
-    # - vagrant-triggers
-    # - vagrant-vbguest
-  additional_hosts: |
-    192.168.1.1 example.com
+    - 10.0.0-IIB-LINUXX64-FP0011.tar.gz

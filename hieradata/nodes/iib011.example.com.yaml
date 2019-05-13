@@ -1,0 +1,6 @@
+---
+role: role::iib
+
+profile::installiib::source_location:   /vagrant/modules/software/files/
+profile::installiib::version:           11.0.0.4
+profile::installiib::file_name:         11.0.0-ACE-LINUXX64-FP0004

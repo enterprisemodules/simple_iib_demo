@@ -1,0 +1,16 @@
+---
+#
+# Include the shared gitlab CI definitions
+#
+include:
+  - project: 'enterprisemodules/gitlab_ci'
+    file: 'gitlab-ci.yml'
+
+iib010_demo_check:
+  extends: .demo_check
+  variables:
+    server: ml-iib010
+  before_script:
+    - mkdir -p modules/software/files
+    - cp ~/software/10.0.0-IIB-LINUXX64-FP0011.tar.gz modules/software/files
+
