@@ -4,11 +4,35 @@ pe-master:
   cpucount:         2
   ram:              3072
   type:             pe-master
+
 ml-iib01:
   public_ip: '192.168.253.31'
   cpucount: 2
   type:     masterless
+  box: enterprisemodules/centos-7.3-x86_64-nocm
+  # The installer needs to be unpacked in the ./modules/software/files/
+  # directory.
+  puppet_installer: puppet-enterprise-2017.2.3-el-7-x86_64/puppet-enterprise-installer
+  software_files:
+    - 10.0.0-IIB-LINUXX64-FP0010.tar.gz
+  required_plugins:
+    # - vagrant-triggers
+    # - vagrant-vbguest
+  additional_hosts: |
+    192.168.1.1 example.com
+
 pe-iib01:
   public_ip: '192.168.253.31'
   cpucount: 2
   type:     pe-agent
+  box: enterprisemodules/centos-7.3-x86_64-nocm
+  # The installer needs to be unpacked in the ./modules/software/files/
+  # directory.
+  puppet_installer: puppet-enterprise-2017.2.3-el-7-x86_64/puppet-enterprise-installer
+  software_files:
+    - 10.0.0-IIB-LINUXX64-FP0010.tar.gz
+  required_plugins:
+    # - vagrant-triggers
+    # - vagrant-vbguest
+  additional_hosts: |
+    192.168.1.1 example.com

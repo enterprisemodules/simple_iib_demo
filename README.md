@@ -1,3 +1,4 @@
+[![Enterprise Modules](https://raw.githubusercontent.com/enterprisemodules/public_images/master/banner1.jpg)](https://www.enterprisemodules.com)
 # Demo Puppet implementation
 
 This repo contains a demonstration of a simple IBM Integration Bus (IIB) installation installation.
