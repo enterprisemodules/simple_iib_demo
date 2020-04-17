@@ -9,9 +9,9 @@ This repo contains a demonstration of a simple IBM Integration Bus (IIB) install
 -
 -To use a specific version of Puppet use the next variable:
 -
--```
+```
 -export PUPPET_VERSION=6.13.0
-
+```
 ## Starting the nodes masterless
 
 All nodes are available to test with Puppet masterless. To do so, add `ml-` for the name when using vagrant:

@@ -1,3 +1,4 @@
 ---
 
 profile::installiib::source_location:   puppet:///modules/software
+easy_type::generate_password_mode:  development
