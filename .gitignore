@@ -24,3 +24,8 @@
 !modules/software/.gitkeep
 /modules/augeasproviders_sysctl
 /modules/augeasproviders_core
+/modules/systemd
+/modules/ibm_profile
+/modules/firewalld
+/modules/firewall
+/modules/echo
