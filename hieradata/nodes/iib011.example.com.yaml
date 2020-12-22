@@ -1,6 +1,46 @@
 ---
 role: role::iib
 
-profile::installiib::source_location:   /vagrant/modules/software/files/
-profile::installiib::version:           11.0.0.4
-profile::installiib::file_name:         11.0.0-ACE-LINUXX64-FP0004
+#
+# Defauls for all brokers
+#
+ibm_profile::iib_machine::broker_setup:defaults:
+  ensure:   present
+  status:   running
+
+#
+# Characteristics for individual brokers
+#
+ibm_profile::iib_brokers:
+  '10.0.0.11/BROKER1':
+    queue_manager:                        QM1
+    auto_restart:                         true # Auto restartto set correct values
+    cache_policy:                         default
+    cache_port_range:                     2910-2930
+    http_listener_http_connector_port:    7091
+    http_listener_https_connector_port:   7094
+    auto_restart:                         true
+    http_listener_enable_ssl_connector:   true
+
+
+#
+# Defauls for all servers
+#
+ibm_profile::iib_machine::server_setup:defaults:
+  ensure:   present
+  status:   running
+#
+# Characteristics for individual servers
+#
+ibm_profile::iib_machine::server_setup::list:
+  10.0.0.11/BROKER1/SERVER_1:    {}
+
+#
+# Defauls for all deployments
+#
+ibm_profile::iib_machine::deployments:defaults:
+  ensure:   present
+#
+# Characteristics for individual deployments
+#
+ibm_profile::iib_machine::deployments::list: {}

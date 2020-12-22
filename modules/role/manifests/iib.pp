@@ -2,11 +2,9 @@
 class role::iib()
 {
   contain ::profile::base
-  contain ::profile::installiib
-  contain ::profile::iib::example
+  contain ::ibm_profile::iib_machine
 
   Class['::profile::base']
-  -> Class['::profile::installiib']
-  -> Class['::profile::iib::example']
+  -> Class['::ibm_profile::iib_machine']
 
 }
