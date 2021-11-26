@@ -1,15 +1,15 @@
 profile::base::hosts::list:
   iibmaster.example.com:
-    ip: 192.168.253.10
+    ip: 192.168.56.9
     host_aliases:
       - iibmaster
       - master
       - puppet
   iib010.example.com:
-    ip: 192.168.254.10
+    ip: 192.168.56.10
     host_aliases:
       - iib010
   iib011.example.com:
-    ip: 192.168.254.11
+    ip: 192.168.56.11
     host_aliases:
       - iib011

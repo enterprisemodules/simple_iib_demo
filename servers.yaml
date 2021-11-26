@@ -23,7 +23,7 @@ pe-defaults:
 # The settings for the Puppet Enterprise Server
 #
 pe-iibmaster:
-  public_ip:       '192.168.253.10'
+  public_ip:       '192.168.56.9'
   cpucount:         2
   ram:              3072
   type:             pe-master
@@ -33,13 +33,13 @@ pe-iibmaster:
 # All masterless nodes
 #
 ml-iib010:
-  public_ip: '192.168.254.10'
+  public_ip: '192.168.56.10'
   software_files:
     - 10.0.0-IIB-LINUXX64-FP0011.tar.gz
 #
 # All Puppet Agent nodes
 #
 pe-iib010:
-  public_ip: '192.168.254.10'
+  public_ip: '192.168.56.10'
   software_files:
     - 10.0.0-IIB-LINUXX64-FP0011.tar.gz
