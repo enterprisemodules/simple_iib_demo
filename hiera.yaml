@@ -1,16 +1,17 @@
 ---
 version: 5
-
-defaults:
-  data_hash: yaml_data
-  datadir: hieradata
+defaults:  # Used for any hierarchy level that omits these keys.
+  datadir: hieradata         # This path is relative to hiera.yaml's directory.
+  data_hash: yaml_data       # Use the built-in YAML backend.
 
 hierarchy:
-  - name: 'Node data'
-    path: "nodes/%{::fqdn}.yaml"
+  - name: "Per-node data"                   # Human-readable name.
+    paths:
+      - "nodes/%{networking.hostname}.yaml"  # File path, relative to datadir.
+      - "nodes/%{networking.fqdn}.yaml"
 
-  - name: 'Deployment Zones'
-    path: "deployment_zones/%{deployment_zone}.yaml"
+  - name: "Deployment Zone" # Uses custom facts.
+    path: "deployment_zones/%{::deployment_zone}.yaml"
 
-  - name: 'Defaults'
-    path: defaults.yaml
+  - name: "Defaults"
+    path: "defaults.yaml"
