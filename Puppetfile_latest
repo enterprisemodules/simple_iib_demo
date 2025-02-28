@@ -1,0 +1,30 @@
+#
+#
+# Here are some generic modules
+mod 'puppetlabs-stdlib'
+mod 'saz-limits'
+mod 'saz-timezone'
+mod 'puppet-archive'
+mod 'AlexCline-dirtree'
+mod 'puppet-augeasproviders_sysctl'
+mod 'puppet-augeasproviders_core'
+mod 'puppet-systemd'
+mod 'ipcrm-echo'
+mod 'puppetlabs-firewall'
+mod 'puppet-firewalld'
+#
+# and the EM modules
+#
+#
+mod 'easy_type',   git: "https://gitlab-ci-token:#{ENV['CI_TOKEN']}@gitlab.com/enterprisemodules/easy_type_src.git", ref: 'master'
+mod 'iib_install', git: "https://gitlab-ci-token:#{ENV['CI_TOKEN']}@gitlab.com/enterprisemodules/iib_install.git", ref: 'master'
+mod 'iib_config',  git: "https://gitlab-ci-token:#{ENV['CI_TOKEN']}@gitlab.com/enterprisemodules/iib_config.git", ref: 'master'
+mod 'ibm_profile', git: "https://gitlab.com/enterprisemodules/ibm_profile.git", ref: 'master'
+#
+# Modules that are part of the control repo. R10K doesn't need to touch these
+#
+mod 'bar_files',  :local => true
+mod 'role',       :local => true
+mod 'profile',    :local => true
+mod 'em_license', :local => true
+mod 'software',   :local => true

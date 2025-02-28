@@ -1,45 +1,29 @@
 ---
-#
-# The default settings for all nodes
-#
 defaults:
-  domain_name:     example.com
+  domain_name:      example.com
+  ip_start_address: 192.168.56.120
+  prefix:           iib
   cpucount:         1
+  #
+  # Chose one of the boxes you like
+  #
+  # box:              enterprisemodules/ol-8.1-x86_64-nocm    # OracleLinux 8.1
+  # box:              enterprisemodules/ol-9.0-x86_64-nocm    # Oracle Linux 9.0
+  # box:              enterprisemodules/al-9.0-x86_64-nocm    # AlmaLinux 9.0
+  # box:              enterprisemodules/rl-9.0-x86_64-nocm    # RockyLinux 9.0
+  # box:                enterprisemodules/ol-7.7-x86_64-nocm
   box:              enterprisemodules/ol-8.1-x86_64-nocm
-  virtualboxorafix: enable
-#
-# The default settings for all ML nodes
-#
-ml-defaults:
-  type:             masterless
-#
-# The default settings for all PE nodes
-#
-pe-defaults:
-  type:             pe-agent
-  puppet_master:    iibmaster
 
 #
 # The settings for the Puppet Enterprise Server
 #
-pe-iibmaster:
-  public_ip:       '192.168.56.9'
-  cpucount:         2
-  ram:              3072
-  type:             pe-master
-  puppet_installer: puppet-enterprise-2019.1.0-el-7-x86_64/puppet-enterprise-installer
+pe-puppetserver:
+  puppet_installer: puppet-enterprise-2019.5.0-el-8-x86_64/puppet-enterprise-installer
 
 #
-# All masterless nodes
+# All nodes nodes
 #
-ml-iib010:
-  public_ip: '192.168.56.10'
-  software_files:
-    - 10.0.0-IIB-LINUXX64-FP0011.tar.gz
-#
-# All Puppet Agent nodes
-#
-pe-iib010:
+iib010:
   public_ip: '192.168.56.10'
   software_files:
     - 10.0.0-IIB-LINUXX64-FP0011.tar.gz
